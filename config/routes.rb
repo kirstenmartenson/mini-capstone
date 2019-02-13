@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  # STEP 1: A ROUTE triggers a controller action
-  # verb "/urls" => "namespace/controllers#action"
-  # namespace :api do
-  #   get "/all_products_url" => "products#all_products_method"
-  #   get "/first_product_url" => "products#first_product_method"
-  # #   get "/second_product_url" => "products#second_product_method"
-  # end
+  # STEP 1: A ROUTE triggers a controller
 
   namespace :api do
     get "/products" => "products#index"
@@ -13,5 +7,28 @@ Rails.application.routes.draw do
     get "/products/:id" => "products#show"
     patch "/products/:id" => "product#update"
     delete "/products/:id" => "products#destroy"
+
+    get "/suppliers" => "suppliers#index"
+    post "/suppliers" => "suppliers#create"
+    get "/suppliers/:id" => "suppliers#show"
+    patch "/suppliers/:id" => "suppliers#update"
+    delete "/suppliers/:id" => "suppliers#destroy"
+
+    post "/users" => "users#create" 
+
+    post "/sessions" => "sessions#create"
+
+    get "/orders" => "orders#index"
+    post "/orders" => "orders#create"
+
+    post "/carted_products" => "carted_products#create"
   end
+
+  get "/products" => "products#index"
+  get "products/new" => "products#new"
+  get "/products/:id" => "products#show"
+  post "/products" => "products#create"
+  get "/products/:id/edit" => "products#edit"
+  patch "/products/:id" => "product/#update"
+  delete "/products/:id" => "products#destroy"
 end

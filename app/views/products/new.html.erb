@@ -1,0 +1,32 @@
+<h1>New Product</h1>
+<form action="/products" method="post">
+  <div>
+    Name: <input type="text" name="name">
+  </div>
+
+  <div>
+    Description: <input type="text" name="description">
+  </div>
+
+  <div>
+    Price: <input type="text" name="price">
+  </div>
+
+  <div>
+    Supplier: <input type="text" name="Supplier">
+  </div>
+
+  <div>
+    Choose a product:
+    <select>
+      
+    </select>name="product_id">
+      <% @products.each do |product| %>
+        <option value="<%= product.id %>"><%= product.name %></option>
+      <% end %>
+    </select>
+
+  </div>
+  <input type="submit" value="Create Product">
+
+</form>
