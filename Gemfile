@@ -53,5 +53,3 @@ gem 'http'
 gem 'rack-cors', require: 'rack/cors'
 
 gem 'seed_dump'
-
-gem 'jwt'
